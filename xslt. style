@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  
+  <!-- Match the root element -->
+  <xsl:template match="/">
+    <html>
+      <head>
+        <title>Soup.io Site Information</title>
+      </head>
+      <body>
+        <h1>Soup.io Site Information</h1>
+        <!-- Apply templates for site info, features, and user profile -->
+        <xsl:apply-templates select="soupio_site/site_info"/>
+        <xsl:apply-templates select="soupio_site/features"/>
+        <xsl:apply-templates select="soupio_site/user_profile"/>
+        <h2>Latest Posts</h2>
+        <!-- Apply templates for each post -->
+        <xsl:apply-templates select="soupio_site/latest_posts/post"/>
+      </body>
+    </html>
+  </xsl:template>
+  
+  <!-- Template for site info -->
+  <xsl:template match="site_info">
+    <h2>Site Information</h2>
+    <p><strong>Name:</strong> <xsl:value-of select="site_name"/></p>
+    <p><strong>Description:</strong> <xsl:value-of select="site_description"/></p>
+    <p><strong>URL:</strong> <a href="{site_url}"><xsl:value-of select="site_url"/></a></p>
+  </xsl:template>
+  
+  <!-- Template for features -->
+  <xsl:template match="features">
+    <h2>Features</h2>
+    <ul>
+      <!-- Apply templates for each feature -->
+      <xsl:apply-templates select="feature"/>
+    </ul>
+  </xsl:template>
+  
+  <!-- Template for individual feature -->
+  <xsl:template match="feature">
+    <li><xsl:value-of select="."/></li>
+  </xsl:template>
+  
+  <!-- Template for user profile -->
+  <xsl:template match="user_profile">
+    <h2>User Profile</h2>
+    <p><strong>Username:</strong> <xsl:value-of select="username"/></p>
+    <p><strong>Bio:</strong> <xsl:value-of select="bio"/></p>
+    <p><strong>Followers:</strong> <xsl:value-of select="followers"/></p>
+    <p><strong>Following:</strong> <xsl:value-of select="following"/></p>
+    <p><strong>Posts Count:</strong> <xsl:value-of select="posts_count"/></p>
+  </xsl:template>
+  
+  <!-- Template for posts -->
+  <xsl:template match="post">
+    <div>
+      <h3>Post by <xsl:value-of select="author"/></h3>
+      <p><xsl:value-of select="content"/></p>
+      <img src="{image_url}" alt="Post Image"/>
+      <p><strong>Likes:</strong> <xsl:value-of select="likes"/></p>
+      <h4>Comments:</h4>
+      <ul>
+        <!-- Apply templates for each comment -->
+        <xsl:apply-templates select="comments/comment"/>
+      </ul>
+    </div>
+  </xsl:template>
+  
+  <!-- Template for comments -->
+  <xsl:template match="comment">
+    <li><strong><xsl:value-of select="author"/>:</strong> <xsl:value-of select="content"/></li>
+  </xsl:template>
+  
+</xsl:stylesheet>

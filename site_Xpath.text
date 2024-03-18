@@ -1,0 +1,17 @@
+1. **Retrieve the username of the user profile:**
+
+XPath Expression: `/soupio_site/user_profile/username`
+
+Result: `Smith_user`
+
+2. **Retrieve the content of the first post:**
+
+XPath Expression: `/soupio_site/latest_posts/post[1]/content`
+
+Result: `This is a sample post on Soup.io`
+
+3. **Retrieve the number of likes for the second post:**
+
+XPath Expression: `/soupio_site/latest_posts/post[2]/likes`
+
+Result: `50`

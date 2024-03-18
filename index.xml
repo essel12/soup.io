@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soupio_site>
+    <site_info>
+        <site_name>Soup.io</site_name>
+        <site_description>A microblogging platform for sharing multimedia content,icluding text, images, videos, and links.</site_description>
+        <site_url>https://www.soup.io</site_url>
+        <site_logo>https://www.soup.io/logo.png</site_logo>
+    </site_info>
+    <features>
+        <feature>Share text updates</feature>
+        <feature>Post images</feature>
+        <feature>Share videos</feature>
+        <feature>Follow other users</feature>
+        <feature>Discover new content</feature>
+    </features>
+    <user_profile>
+        <username>Smith_user</username>
+        <bio>This is my Soup.io profile bio.</bio>
+        <profile_picture>https://www.soup.io/users/example_user/profile_pic.jpg</profile_picture>
+        <followers>1000</followers>
+        <following>500</following>
+        <posts_count>5000</posts_count>
+    </user_profile>
+    <latest_posts>
+        <post>
+            <author>Smith_user</author>
+            <content>This is a sample post on Soup.io</content>
+            <image_url>https://www.soup.io/users/example_user/posts/post1.jpg</image_url>
+            <likes>50</likes>
+            <comments>
+                <comment>
+                    <author>Rose Asare</author>
+                    <content>Great post!</content>
+                </comment>
+                <comment>
+                    <author>Kate Adams</author>
+                    <content>Love it!</content>
+                </comment>
+            </comments>
+        </post>
+        <!-- Additional latest posts can be added here -->
+    </latest_posts>
+</soupio_site>
